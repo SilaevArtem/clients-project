@@ -17,6 +17,8 @@ img {
     min-width: 100%;
 }
 
+
+
 body {
     min-width: 1024px;
     margin: auto;
@@ -46,6 +48,7 @@ h1, p {
     margin: 0;
     padding: 0;
     background-color: transparent;
+    border: none;
     cursor: pointer;
 }
 
@@ -101,8 +104,84 @@ h1, p {
     margin-bottom: 26px;
 }
 
+table {
+    width: 100%;
+    margin-bottom: 40px;
+    -webkit-border-horizontal-spacing: 0;
+}
+
+tbody {
+    background-color: white;
+}
+
 th {
     font-size: 12px;
     line-height: 16px;
+    text-align: center;
     color: var(--color-grey);
+}
+
+tr {
+    border-bottom: 1px solid var(--color-grey);
+}
+
+#id::after, #FIO::after, #DateCreation::after, #LastChanges::after{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: transparent url('../img/arrow-up.svg') no-repeat;
+}
+
+#id {
+    color: var(--color-purple);
+}
+
+#actions::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url('../img/edit.svg') no-repeat;
+}
+
+#actions {
+    display: flex;
+    align-items: end;
+    gap: 2px;
+}
+
+
+#delete::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: bottom;
+    background: transparent url('../img/delete.svg') no-repeat;
+}
+
+td {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.clients-btn {
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+    padding: 12px 26px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-purple);
+    border: 1px solid var(--color-purple);
+    cursor: pointer;
+}
+
+.clients-btn::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 16px;
+    background: transparent url('../img/client-button.svg') no-repeat;
 }
