@@ -90,6 +90,11 @@ h1, p {
     border: 1px solid var(--color-grey);
 }
 
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: 0;
+}
+
 .form-search__input::placeholder {
     color: var(--color-grey);
 }
@@ -125,7 +130,7 @@ tr {
     border-bottom: 1px solid var(--color-grey);
 }
 
-#id::after, #FIO::after, #DateCreation::after, #LastChanges::after{
+#id::after, #FIO::after, #DateCreation::after, #LastChanges::after {
     content: '';
     display: inline-block;
     width: 12px;
@@ -135,6 +140,21 @@ tr {
 
 #id {
     color: var(--color-purple);
+    cursor: pointer;
+}
+
+#FIO, #DateCreation, #LastChanges {
+    cursor: pointer;
+}
+
+
+#id.arrow-down::after, #FIO.arrow-down::after, #DateCreation.arrow-down::after, #LastChanges.arrow-down::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url('../img/arrow_down.svg');
+    background-repeat: no-repeat;
 }
 
 #actions::before {
@@ -143,14 +163,33 @@ tr {
     width: 16px;
     height: 16px;
     background: transparent url('../img/edit.svg') no-repeat;
+    transition: background-image .1s ease-in-out;
 }
 
 #actions {
     display: flex;
     align-items: end;
     gap: 2px;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
 }
 
+#actions:hover {
+    color: var(--color-purple);
+}
+
+#actions:active {
+    color: var(--color-purple);
+}
+#actions:active::before {
+    background-image: url('../img/load-blue.svg');
+    background-repeat: no-repeat;
+}
+
+#delete {
+    transition: color .3s ease-in-out;
+    cursor: pointer;
+}
 
 #delete::before {
     content: '';
@@ -159,6 +198,16 @@ tr {
     height: 16px;
     vertical-align: bottom;
     background: transparent url('../img/delete.svg') no-repeat;
+    transition: background-image .1s ease-in-out;
+}
+
+#delete:hover {
+    color: #F06A4D;
+}
+
+#delete:active::before {
+    background-image: url('../img/load-red.svg');
+    background-repeat: no-repeat;
 }
 
 td {
