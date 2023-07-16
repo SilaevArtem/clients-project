@@ -143,6 +143,10 @@ tr {
     cursor: pointer;
 }
 
+#number-of-id {
+    color: var(--color-grey);
+}
+
 #FIO, #DateCreation, #LastChanges {
     cursor: pointer;
 }
@@ -157,7 +161,7 @@ tr {
     background-repeat: no-repeat;
 }
 
-#actions::before {
+.actions::before {
     content: '';
     display: inline-block;
     width: 16px;
@@ -166,7 +170,7 @@ tr {
     transition: background-image .1s ease-in-out;
 }
 
-#actions {
+.actions {
     display: flex;
     align-items: end;
     gap: 2px;
@@ -174,14 +178,14 @@ tr {
     transition: color .3s ease-in-out;
 }
 
-#actions:hover {
+.actions:hover {
     color: var(--color-purple);
 }
 
-#actions:active {
+.actions:active {
     color: var(--color-purple);
 }
-#actions:active::before {
+.actions:active::before {
     background-image: url('../img/load-blue.svg');
     background-repeat: no-repeat;
 }
@@ -233,4 +237,114 @@ td {
     width: 22px;
     height: 16px;
     background: transparent url('../img/client-button.svg') no-repeat;
+}
+
+ /* Modal */
+
+ .modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, .8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+ }
+
+ .modal-active {
+    opacity: 1;
+    visibility: visible;
+ }
+
+.modal__wrapp {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.modal__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    background-color: white;
+    color: var(--color-black);
+    width: 600px;
+    padding: 30px;
+}
+
+.modal__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.modal__title {
+    margin-bottom: 32px;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--color-grey);
+    font-size: 20px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 32px;
+}
+
+.label {
+    width: 100%;
+}
+
+.modal-form__input {
+    width: 100%;
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid var(--color-grey);
+}
+
+.modal-form__input:focus {
+    outline: none;
+}
+
+#modal_btn_newContact {
+    width: 100%;
+    padding: 8px;
+    background-color: #c8c5d17a;
+}
+
+.modal-form__btn_purple {
+    align-self: center;
+    padding: 14px 35px;
+    background-color: var(--color-purple);
+    color: white;
+}
+
+.modal-form__btn_underline {
+    align-self: center;
+    text-decoration: underline;
+}
+
+
+.modal__question {
+    width: 34%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
 }
