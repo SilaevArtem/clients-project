@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skillbus</title>
+    <title>Clients project</title>
+    <link rel="stylesheet" href="css/choices.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,35 +35,42 @@
 
             <!-- Модальное окно -->
             <div id="modal" class="modal">
+                <a href="#"  class="modal__area modal-close"></a>
                 <div class="modal__wrapp">
                     <div id="modal-content" class="modal__content">
-                        <a id="close" href="#" class="modal__close-btn">X</a>
+                        <a id="close" href="#" class="modal__close-btn modal-close">X</a>
                         <div id="modalTitle" class="modal__title"></div>
                         <form action="#" id="modal-form" class="modal-form">
                             <label for="modal-input_surname" class="label">
-                                <input id="modal-input_surname" type="text" class="modal-form__input modal-form__input_surname" placeholder="Фамилия*">
+                                <input id="modal-input_surname" type="text" name = "surname" class="modal-form__input modal-form__input_surname" placeholder="Фамилия*">
                             </label>
                             <label for="modal-input_name" class="label">
-                                <input id="modal-input_name" type="text" class="modal-form__input modal-form__input_name" placeholder="Имя*">
+                                <input id="modal-input_name" type="text" name = "name" class="modal-form__input modal-form__input_name" placeholder="Имя*">
                             </label>
                             <label for="modal-input_lastname" class="label">
-                                <input id="modal-input_lastname" type="text" class="modal-form__input modal-form__input_lastname" placeholder="Отчество">
+                                <input id="modal-input_lastname" type="text" name = "lastname" class="modal-form__input modal-form__input_lastname" placeholder="Отчество">
                             </label>
 
-                            <button id="modal_btn_newContact" class="madal-form__btn btn-reset">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.99998 3.66659C6.63331 3.66659 6.33331 3.96659 6.33331 4.33325V6.33325H4.33331C3.96665 6.33325 3.66665 6.63325 3.66665 6.99992C3.66665 7.36659 3.96665 7.66659 4.33331 7.66659H6.33331V9.66659C6.33331 10.0333 6.63331 10.3333 6.99998 10.3333C7.36665 10.3333 7.66665 10.0333 7.66665 9.66659V7.66659H9.66665C10.0333 7.66659 10.3333 7.36659 10.3333 6.99992C10.3333 6.63325 10.0333 6.33325 9.66665 6.33325H7.66665V4.33325C7.66665 3.96659 7.36665 3.66659 6.99998 3.66659ZM6.99998 0.333252C3.31998 0.333252 0.333313 3.31992 0.333313 6.99992C0.333313 10.6799 3.31998 13.6666 6.99998 13.6666C10.68 13.6666 13.6666 10.6799 13.6666 6.99992C13.6666 3.31992 10.68 0.333252 6.99998 0.333252ZM6.99998 12.3333C4.05998 12.3333 1.66665 9.93992 1.66665 6.99992C1.66665 4.05992 4.05998 1.66659 6.99998 1.66659C9.93998 1.66659 12.3333 4.05992 12.3333 6.99992C12.3333 9.93992 9.93998 12.3333 6.99998 12.3333Z" fill="#9873FF"/>
-                                </svg> 
-                                Добавить контакт                                   
-                            </button>
-                            <button id="btn_save" class="modal-form__btn_purple btn-reset">Сохранить</button>
-
+                            <div class="accordion">
+                                <div id="accordion-header" class="accordion__header"></div>
+                                <div class="accordion__body">
+                                    <button id="modal_btn_newContact" class="madal-form__btn btn-reset">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.99998 3.66659C6.63331 3.66659 6.33331 3.96659 6.33331 4.33325V6.33325H4.33331C3.96665 6.33325 3.66665 6.63325 3.66665 6.99992C3.66665 7.36659 3.96665 7.66659 4.33331 7.66659H6.33331V9.66659C6.33331 10.0333 6.63331 10.3333 6.99998 10.3333C7.36665 10.3333 7.66665 10.0333 7.66665 9.66659V7.66659H9.66665C10.0333 7.66659 10.3333 7.36659 10.3333 6.99992C10.3333 6.63325 10.0333 6.33325 9.66665 6.33325H7.66665V4.33325C7.66665 3.96659 7.36665 3.66659 6.99998 3.66659ZM6.99998 0.333252C3.31998 0.333252 0.333313 3.31992 0.333313 6.99992C0.333313 10.6799 3.31998 13.6666 6.99998 13.6666C10.68 13.6666 13.6666 10.6799 13.6666 6.99992C13.6666 3.31992 10.68 0.333252 6.99998 0.333252ZM6.99998 12.3333C4.05998 12.3333 1.66665 9.93992 1.66665 6.99992C1.66665 4.05992 4.05998 1.66659 6.99998 1.66659C9.93998 1.66659 12.3333 4.05992 12.3333 6.99992C12.3333 9.93992 9.93998 12.3333 6.99998 12.3333Z" fill="#9873FF"/>
+                                        </svg> 
+                                        Добавить контакт                                   
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <script defer src="js/main.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/choices.min.js"></script>
+    <script src="js/inputmask.min.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 </body>
 </html>
